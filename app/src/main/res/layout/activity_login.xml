@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/LbEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="E-mail"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri"
+        app:layout_constraintTop_toTopOf="@+id/guidline4" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_border"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="16dp"
+        android:hint="Email"
+        android:paddingStart="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/gdkanan"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri"
+        app:layout_constraintTop_toBottomOf="@+id/LbEmail" />
+
+    <TextView
+        android:id="@+id/LbPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text_border"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/gdkanan"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri"
+        app:layout_constraintTop_toBottomOf="@+id/LbPassword" />
+
+    <TextView
+        android:id="@+id/register_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToRegister"
+        android:text="Belum punya akun ? Daftar"
+        android:textColorLink="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gdkanan"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/edit_text_border"
+        android:paddingStart="16dp"
+        android:text="Masuk"
+        app:layout_constraintEnd_toStartOf="@+id/gdkanan"
+        app:layout_constraintStart_toStartOf="@+id/gdkiri"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdkiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdkanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="190dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

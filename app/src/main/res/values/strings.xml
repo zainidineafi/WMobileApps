@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string-array name="country">
+        <item> Indonesia </item>
+        <item> Malaysia </item>
+        <item> Singapore </item>
+        <item> Thailand </item>
+        <item> Brunei Darussalam </item>
+        <item> Vietnam </item>
+        <item> Afrika </item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
