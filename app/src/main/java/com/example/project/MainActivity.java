@@ -17,10 +17,11 @@ import com.example.project.Activity.RegisterActivity;
 import com.example.project.Activity.DatePickerActivity;
 import com.example.project.Activity.MessageActivity;
 import com.example.project.Activity.CameraActivity;
+import com.example.project.Activity.CRUDSQLActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnDashboard, btnIntent, btnListCountry, btnLogin, btnMahasiswa, btnRegister, btnDatePicker, btnMessage, btnKamera;
+    private Button btnDashboard, btnIntent, btnListCountry, btnLogin, btnMahasiswa, btnRegister, btnDatePicker, btnMessage, btnKamera, btnCrud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDatePicker = findViewById(R.id.btnDatePicker);
         btnMessage = findViewById(R.id.btnMessage);
         btnKamera = findViewById(R.id.btnKamera);
+        btnCrud = findViewById(R.id.btnCrud);
+
 
 
         btnDashboard.setOnClickListener(this);
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDatePicker.setOnClickListener(this);
         btnMessage.setOnClickListener(this);
         btnKamera.setOnClickListener(this);
+        btnCrud.setOnClickListener(this);
 
     }
 
@@ -88,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnKamera:
                 intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnCrud:
+                intent = new Intent(MainActivity.this, CRUDSQLActivity.class);
                 startActivity(intent);
                 break;
         }

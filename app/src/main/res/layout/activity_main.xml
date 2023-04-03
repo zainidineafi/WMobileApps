@@ -60,4 +60,9 @@ android:padding="16dp">
         android:layout_height="wrap_content"
         android:text="Kamera" />
 
+    <Button
+        android:id="@+id/btnCrud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crud Sql" />
 </androidx.appcompat.widget.LinearLayoutCompat>
