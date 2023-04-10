@@ -9,19 +9,22 @@ import android.widget.Button;
 
 import com.example.project.Activity.DashboardActivity;
 import com.example.project.Activity.DatePickerActivity;
+import com.example.project.Activity.GPSActivity;
 import com.example.project.Activity.IntentActivity;
 import com.example.project.Activity.ListCountryActivity;
 import com.example.project.Activity.LoginActivity;
+import com.example.project.Activity.LogoutActivity;
 import com.example.project.Activity.MahasiswaActivity;
 import com.example.project.Activity.RegisterActivity;
-import com.example.project.Activity.DatePickerActivity;
 import com.example.project.Activity.MessageActivity;
 import com.example.project.Activity.CameraActivity;
 import com.example.project.Activity.CRUDSQLActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnDashboard, btnIntent, btnListCountry, btnLogin, btnMahasiswa, btnRegister, btnDatePicker, btnMessage, btnKamera, btnCrud;
+    private Button btnDashboard, btnIntent, btnListCountry, btnLogin,
+            btnMahasiswa, btnRegister, btnDatePicker, btnMessage, btnKamera,
+            btnCrud, btnLogout, btnGps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMessage = findViewById(R.id.btnMessage);
         btnKamera = findViewById(R.id.btnKamera);
         btnCrud = findViewById(R.id.btnCrud);
+        btnGps = findViewById(R.id.btnGps);
+        btnLogout = findViewById(R.id.btnLogout);
 
 
 
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMessage.setOnClickListener(this);
         btnKamera.setOnClickListener(this);
         btnCrud.setOnClickListener(this);
+        btnGps.setOnClickListener(this);
+        btnLogout.setOnClickListener(this);
 
     }
 
@@ -96,6 +103,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnCrud:
                 intent = new Intent(MainActivity.this, CRUDSQLActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnGps:
+                intent = new Intent(MainActivity.this, GPSActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnLogout:
+                intent = new Intent(MainActivity.this, LogoutActivity.class);
                 startActivity(intent);
                 break;
         }

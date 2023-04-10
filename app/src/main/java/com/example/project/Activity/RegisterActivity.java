@@ -10,12 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.project.MainActivity;
+import com.example.project.helper.SessionManager;
 import com.example.project.R;
 
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextName, editTextPassword, editTextAddress, editTextPhoneNumber;
     private Button buttonRegister;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +26,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_register);
 
-        EditText editTextEmail = findViewById(R.id.editTextEmail);
-        EditText editTextName = findViewById(R.id.editTextName);
-        EditText editTextPassword = findViewById(R.id.editTextPassword);
-        EditText editTextAddress = findViewById(R.id.editTextAddress);
-        EditText editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
+        sessionManager = new SessionManager(getApplicationContext());
 
-        Button buttonRegister = findViewById(R.id.buttonRegister);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextName = findViewById(R.id.editTextName);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextAddress = findViewById(R.id.editTextAddress);
+        editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
+
+        buttonRegister = findViewById(R.id.buttonRegister);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +50,15 @@ public class RegisterActivity extends AppCompatActivity {
 
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(getApplicationContext(), IntentActivity.class);
+                        // Simpan data register user ke dalam Shared Preferences
+                        sessionManager.createRegisterSession(
+                                editTextEmail.getText().toString(),
+                                editTextName.getText().toString(),
+                                editTextPassword.getText().toString(),
+                                editTextAddress.getText().toString(),
+                                editTextPhoneNumber.getText().toString());
+
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                     }
                 });
